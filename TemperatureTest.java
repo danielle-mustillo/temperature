@@ -23,14 +23,14 @@ public class TemperatureTest {
 	
 	/* The below code was chosen as to start from 100 base unit and convert to the other unit.
 	 * The conversion was checked in google to be correct.
-	 * The only exception is celcuis to farenheit, which 98 was used to test decimal numbers. 
+	 * The only exception is celsius to farenheit, which 98 was used to test decimal numbers. 
 	 */
 	
 	@Test
 	public void testChangeUnitsKtoC() {
 		Temperature temp = new Temperature(100, Temperature.Units.KELVIN);
 		temp.changeUnits(Temperature.Units.CELSIUS);
-		assertTrue((temp.getValue() + 173.15) < 0.1);
+		assertTrue((temp.getValue() + 173.15) < 0.1); // double values are not exact.
 	}
 	
 	@Test
@@ -67,19 +67,4 @@ public class TemperatureTest {
 		temp.changeUnits(Temperature.Units.CELSIUS);
 		assertTrue(temp.getValue() - 37.778 < 0.1);
 	}
-	
-	
-	
-  // Add multiple tests to check all functions of
-  // {@Code Temperature} class.
-
-  // @Test
-  // public void .... (){
-  //    ...
-  // }
-
-  // @Test
-  // public void .... (){
-  //    ...
-  // }
 }
